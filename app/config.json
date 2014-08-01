@@ -1,6 +1,7 @@
 {
 	"global": {
 	   "links": {
+           "base": "http://www.mangareader.net/",
 	       "list": "http://www.mangareader.net/alphabetical"
 	   }
 	}, 
