@@ -1,5 +1,9 @@
 {
-	"global": {}, 
+	"global": {
+	   "links": {
+	       "list": "http://www.mangareader.net/alphabetical"
+	   }
+	}, 
 	"env:development": {}, 
 	"env:test": {}, 
 	"env:production": {}, 
