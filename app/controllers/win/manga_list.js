@@ -4,16 +4,23 @@ var parserModule = require('pl.tkrz.mangareader.parser');
 var string = require('alloy/string');
 
 function init(){
+    var list = Ti.App.Properties.getObject('list', null);
+    if(list == null && Ti.Network.online) refreshList();
+    else displayList(list);
+}
+
+function refreshList(){
+	$.mangaList.hide();
     $.activityIndicator.show();
     http.list(loadData);
-}
+};
 
 function loadData(data){
 	var string = JSON.stringify(data);
-    var list = parserModule.parseHtml(data);
+    var list = parserModule.parseMangaList(data);
     list = JSON.parse(list);
-    $.activityIndicator.hide();
     displayList(list);
+    Ti.App.Properties.setObject('list', list);
 }
 
 function displayList(list){
@@ -22,8 +29,11 @@ function displayList(list){
 		items: list
 	});
 	$.mangaList.appendSection(manga);
+    $.activityIndicator.hide();
+    $.mangaList.show();
 }
 
 function openTitle(e){
-	alert(JSON.stringify(e));
+	var list = Ti.App.Properties.getObject('list');
+	alert("Manga title: " + list[e.itemIndex].properties.title + " Manga url: " + Alloy.CFG.links.base + list[e.itemIndex].properties.url);
 };
