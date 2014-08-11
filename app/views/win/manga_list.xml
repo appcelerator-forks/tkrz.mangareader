@@ -1,8 +1,7 @@
 <Alloy>
 	<Window class="container" title="Manga List" onOpen="init">
 	    
-	    <ListView id="mangaList">
-	        
+	    <ListView id="mangaList" onItemclick="openTitle">
 	    </ListView>
 	    
 	    <ActivityIndicator id="activityIndicator"/>
