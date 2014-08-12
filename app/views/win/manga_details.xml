@@ -1,0 +1,5 @@
+<Alloy>
+	<Window onOpen="init">
+		<ActivityIndicator id="activityIndicator" />
+	</Window>
+</Alloy>

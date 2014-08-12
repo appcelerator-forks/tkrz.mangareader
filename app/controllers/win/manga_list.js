@@ -35,5 +35,6 @@ function displayList(list){
 
 function openTitle(e){
 	var list = Ti.App.Properties.getObject('list');
-	alert("Manga title: " + list[e.itemIndex].properties.title + " Manga url: " + Alloy.CFG.links.base + list[e.itemIndex].properties.url);
+	// alert("Manga title: " + list[e.itemIndex].properties.title + " Manga url: " + Alloy.CFG.links.base + list[e.itemIndex].properties.url);
+	Alloy.createController('win/manga_details', {url: list[e.itemIndex].properties.url, title: list[e.itemIndex].properties.title}).getView().open();
 };
