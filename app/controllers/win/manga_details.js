@@ -2,8 +2,11 @@ var args = arguments[0] || {};
 var titleUrl = args.url;
 var mangaTitle = args.title;
 var http = require('http');
+var parserModule = require('pl.tkrz.mangareader.parser');
 
 $.manga_details.title = mangaTitle;
+
+$.content.hide();
 
 function init(){
 	$.activityIndicator.show();
@@ -16,7 +19,12 @@ function init(){
 }
 
 function loadData(data){
+	var details = JSON.parse(parserModule.parseMangaDetails(data));
+	// Ti.API.info(details);
+	$.mangaImg.image = details.imageUrl;
+	$.desc.text = details.summary;
 	$.activityIndicator.hide();
+	$.content.show();
 };
 
 function closeWindow(){

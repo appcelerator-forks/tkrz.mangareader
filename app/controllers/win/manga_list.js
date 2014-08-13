@@ -24,7 +24,7 @@ function loadData(data){
 }
 
 function displayList(list){
-	Ti.API.info(JSON.stringify(list));
+	// Ti.API.info(JSON.stringify(list));
 	var manga = Ti.UI.createListSection({
 		items: list
 	});

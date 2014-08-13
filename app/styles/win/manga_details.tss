@@ -1,4 +1,19 @@
 
-".container" : {
-  
+"#content": {
+	layout: 'vertical'  
+}
+"#header":{
+	height: '25%',
+	backgroundColor: 'white'
+}
+"#mangaImg": {
+	left: 0,
+	height: Ti.UI.FILL,
+	width: 'auto'
+}
+"#descView":{
+	layout: 'vertical'
+}
+"#desc":{
+	
 }

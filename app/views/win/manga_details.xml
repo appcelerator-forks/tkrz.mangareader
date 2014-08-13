@@ -1,5 +1,15 @@
 <Alloy>
 	<Window onOpen="init">
+		<ScrollView id="content">
+			<View id="header">
+				<ImageView id="mangaImg" />
+			</View>
+			<View id="descView">
+				<Label class="header">Description:</Label>
+				<Label id="desc" class="text">
+				</Label>
+			</View>
+		</ScrollView>
 		<ActivityIndicator id="activityIndicator" />
 	</Window>
 </Alloy>
