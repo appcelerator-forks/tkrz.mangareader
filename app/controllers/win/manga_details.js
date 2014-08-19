@@ -20,9 +20,17 @@ function init(){
 
 function loadData(data){
 	var details = JSON.parse(parserModule.parseMangaDetails(data));
-	// Ti.API.info(details);
+	// Ti.API.info(JSON.stringify(details));
 	$.mangaImg.image = details.imageUrl;
-	$.desc.text = details.summary;
+	$.description.setItems([
+		{
+			info: {
+				text: details.summary
+			},
+			template: 'description'
+		}
+	]);
+	$.chapters.setItems(details.chapters);
 	$.activityIndicator.hide();
 	$.content.show();
 };

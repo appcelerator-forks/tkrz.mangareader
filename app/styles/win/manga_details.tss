@@ -3,7 +3,7 @@
 	layout: 'vertical'  
 }
 "#header":{
-	height: '25%',
+	height: '100dp',
 	backgroundColor: 'white'
 }
 "#mangaImg": {
@@ -12,8 +12,10 @@
 	width: 'auto'
 }
 "#descView":{
-	layout: 'vertical'
 }
-"#desc":{
-	
+"#description":{
+}
+"#chapters":{
+	height: '250dp',
+	width: '95%'
 }
