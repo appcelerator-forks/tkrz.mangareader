@@ -1,0 +1,34 @@
+<Alloy>
+	<Window onOpen="init">
+		<View id="content">
+			<View id="header">
+				<ImageView id="mangaImg" />
+			</View>
+			<ListView id="descView">
+				
+				<Templates>
+
+	                <!-- Define your item templates within the Templates tags or use the
+	                     Require tag to include a view that only contains an ItemTemplate -->
+	
+	                <ItemTemplate name="description">
+	                    <Label bindId="info" class="text" />
+	                </ItemTemplate>
+	
+	            </Templates>
+				
+				<ListSection id="description">
+					<HeaderView>
+						<Label class="header">Description:</Label>
+					</HeaderView>
+				</ListSection>
+				<ListSection id="chapters">
+					<HeaderView>
+						<Label class="header">Chapters:</Label>
+					</HeaderView>
+				</ListSection>
+			</ListView>
+		</View>
+		<ActivityIndicator id="activityIndicator" />
+	</Window>
+</Alloy>

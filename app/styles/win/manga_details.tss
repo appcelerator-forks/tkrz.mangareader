@@ -1,0 +1,21 @@
+
+"#content": {
+	layout: 'vertical'  
+}
+"#header":{
+	height: '100dp',
+	backgroundColor: 'white'
+}
+"#mangaImg": {
+	left: 0,
+	height: Ti.UI.FILL,
+	width: 'auto'
+}
+"#descView":{
+}
+"#description":{
+}
+"#chapters":{
+	height: '250dp',
+	width: '95%'
+}

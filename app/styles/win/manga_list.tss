@@ -1,0 +1,10 @@
+
+".container": {
+  
+}
+"#mangaList": {
+    
+}
+"#activityIndicator":{
+    style: Ti.UI.ActivityIndicatorStyle.BIG
+}
