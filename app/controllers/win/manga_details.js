@@ -6,8 +6,6 @@ var parserModule = require('pl.tkrz.mangareader.parser');
 
 $.manga_details.title = mangaTitle;
 
-$.content.hide();
-
 function init(){
 	$.activityIndicator.show();
 	http.getPage(loadData, titleUrl);

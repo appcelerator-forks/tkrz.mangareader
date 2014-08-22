@@ -1,15 +1,22 @@
 
 "#content": {
-	layout: 'vertical'  
+	layout: 'vertical',
+	visible: false 
 }
 "#header":{
-	height: '100dp',
+	height: '102dp',
 	backgroundColor: 'white'
 }
 "#mangaImg": {
 	left: 0,
-	height: Ti.UI.FILL,
+	height: '100dp',
 	width: 'auto'
+}
+"#bottomLine":{
+    bottom: 0,
+    width: Ti.UI.FILL,
+    height: '2dp',
+    backgroundColor: 'gray'
 }
 "#descView":{
 }

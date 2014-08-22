@@ -1,15 +1,16 @@
 <Alloy>
 	<Window onOpen="init">
 		<View id="content">
-			<View id="header">
-				<ImageView id="mangaImg" />
-			</View>
 			<ListView id="descView">
 				
+				<HeaderView>
+                    <View id="header">
+                        <ImageView id="mangaImg" />
+                        <View id="bottomLine" />
+                    </View>
+				</HeaderView>
+				
 				<Templates>
-
-	                <!-- Define your item templates within the Templates tags or use the
-	                     Require tag to include a view that only contains an ItemTemplate -->
 	
 	                <ItemTemplate name="description">
 	                    <Label bindId="info" class="text" />
