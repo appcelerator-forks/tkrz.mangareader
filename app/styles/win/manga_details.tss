@@ -5,12 +5,17 @@
 }
 "#header":{
 	height: '102dp',
-	backgroundColor: 'white'
+	backgroundColor: 'white',
+	layout: 'vertical'
 }
 "#mangaImg": {
 	left: 0,
 	height: '100dp',
 	width: 'auto'
+}
+".authorSection":{
+    left: '10dp',
+    color: 'black'
 }
 "#bottomLine":{
     bottom: 0,
