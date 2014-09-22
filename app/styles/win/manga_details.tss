@@ -5,8 +5,7 @@
 }
 "#header":{
 	height: '102dp',
-	backgroundColor: 'white',
-	layout: 'vertical'
+	backgroundColor: 'white'
 }
 "#mangaImg": {
 	left: 0,

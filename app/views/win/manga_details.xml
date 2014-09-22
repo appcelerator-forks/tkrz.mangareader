@@ -6,7 +6,7 @@
 				<HeaderView>
                     <View id="header">
                         <ImageView id="mangaImg" />
-                        <View layout="horizontal">
+                        <View layout="horizontal" left="100dp">
                             <Label id="author" class="authorSection" />
                             <Label id="year" class="authorSection" />
                             <Label id="status" class="authorSection" />
