@@ -6,7 +6,7 @@
     <name>mangareader</name>
     <version>1.0</version>
     <publisher>Tomasz Krzywda</publisher>
-    <url>http://</url>
+    <url>http://github.com/tkrz</url>
     <description>Application to view manga from mangareader.net directly on your mobile device.</description>
     <copyright>2014 by Tomasz Krzywda</copyright>
     <icon>appicon.png</icon>
@@ -40,7 +40,8 @@
             </dict>
         </plist>
     </ios>
-    <android xmlns:android="http://schemas.android.com/apk/res/android"/>
+    <android xmlns:android="http://schemas.android.com/apk/res/android">
+    </android>
     <mobileweb>
         <precache/>
         <splash>

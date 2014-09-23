@@ -6,6 +6,7 @@
 				<HeaderView>
                     <View id="header">
                         <ImageView id="mangaImg" />
+                        <Label id="author" />
                         <View id="bottomLine" />
                     </View>
 				</HeaderView>

@@ -18,7 +18,7 @@ function init(){
 
 function loadData(data){
 	var details = JSON.parse(parserModule.parseMangaDetails(data));
-	// Ti.API.info(JSON.stringify(details));
+	Ti.API.info(JSON.stringify(details));
 	$.mangaImg.image = details.imageUrl;
 	$.description.setItems([
 		{
