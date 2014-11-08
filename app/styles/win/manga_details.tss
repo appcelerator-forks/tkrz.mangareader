@@ -12,14 +12,9 @@
 	height: '100dp',
 	width: 'auto'
 }
-<<<<<<< HEAD
-"#author":{
-	
-=======
 ".authorSection":{
     left: '10dp',
     color: 'black'
->>>>>>> 425a8ac364854c3b3a2e3effa7b7907a54cd4ecd
 }
 "#bottomLine":{
     bottom: 0,

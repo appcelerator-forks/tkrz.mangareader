@@ -41,6 +41,11 @@
         </plist>
     </ios>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
+    	<tool-api-level>14</tool-api-level> 
+		<manifest> 
+			<uses-sdk android:targetSdkVersion="14"/> 
+			<!-- other manifest entries --> 
+		</manifest>
     </android>
     <mobileweb>
         <precache/>
@@ -61,8 +66,8 @@
         <target device="iphone">true</target>
         <target device="mobileweb">true</target>
     </deployment-targets>
-    <sdk-version>3.3.0.GA</sdk-version>
+    <sdk-version>3.4.0.GA</sdk-version>
     <plugins>
-        <plugin version="1.4.1">ti.alloy</plugin>
+        <plugin version="1.5.1">ti.alloy</plugin>
     </plugins>
 </ti:app>
