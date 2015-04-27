@@ -1,7 +1,9 @@
-var args = arguments[0] || {};
-var http = require('http');
-var parserModule = require('pl.tkrz.mangareader.parser');
-var string = require('alloy/string');
+var args = arguments[0] || {},
+http = require('http'),
+parserModule = require('pl.tkrz.mangareader.parser'),
+string = require('alloy/string');
+
+$.mangaList.search = Alloy.Globals.searchView;
 
 function init(){
     var list = Ti.App.Properties.getObject('list', null);
@@ -24,13 +26,19 @@ function loadData(data){
 }
 
 function displayList(list){
-	// Ti.API.info(JSON.stringify(list));
+	Ti.API.info(JSON.stringify(list));
 	var manga = Ti.UI.createListSection({
-		items: list
+	    items: list
 	});
 	$.mangaList.appendSection(manga);
     $.activityIndicator.hide();
     $.mangaList.show();
+}
+
+function noresults() {
+    Ti.UI.createNotification({
+        message: 'Nothing found'
+    }).show();
 }
 
 function openTitle(e){
