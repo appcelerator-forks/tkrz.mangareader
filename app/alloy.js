@@ -10,3 +10,4 @@
 //
 // Alloy.Globals.someGlobalFunction = function(){};
 
+Alloy.Globals.favoritesAddObj = _.extend({}, Backbone.Events);

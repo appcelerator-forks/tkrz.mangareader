@@ -1,0 +1,13 @@
+{
+	"id": "pl.tidev.mangareader.mangapage",
+	"name": "pl.tidev.mangareader.mangapage",
+	"description" : "",
+	"author": "Ti Dev",
+	"version": "1.0",
+	"copyright":"Copyright (c) 2012",
+	"license":"Public Domain",
+	"min-alloy-version": "1.5.1",
+	"min-titanium-version":"3.5.1",
+	"tags":"",
+	"platforms":"android,blackberry,ios,mobileweb"
+}

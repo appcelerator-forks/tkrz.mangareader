@@ -1,4 +1,4 @@
-"#activityIndicator":{
+"ActivityIndicator":{
     style: Ti.UI.ActivityIndicatorStyle.BIG
 }
 ".header":{

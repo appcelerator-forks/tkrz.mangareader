@@ -1,0 +1,10 @@
+<Alloy>
+	<Window id="manga_pages" onOpen="init">
+		<View id="container" class="container" >
+		</View>
+		<View class="overlay">
+			<Label id="currentPage" />
+		</View>
+		<ActivityIndicator id="loader"  />
+	</Window>
+</Alloy>

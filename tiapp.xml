@@ -15,6 +15,7 @@
     <analytics>true</analytics>
     <guid>eabaa7d9-b4a8-4d4a-953f-77289af88e92</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
+    <property name="ti.android.bug2373.finishfalseroot" type="bool">true</property>
     <ios>
         <plist>
             <dict>

@@ -1,5 +1,10 @@
 <Alloy>
 	<Window onOpen="init">
+		
+		<Menu>
+			<MenuItem id="addToFav" onClick="addToFav" title="add to favorites" titleCondensed="favorite" ></MenuItem>
+		</Menu>
+		
 		<ScrollView id="content">
 				
             <View id="header" layout="horizontal" horizontalWrap="false" >
@@ -13,7 +18,7 @@
             </View>
             <Label class="header">Chapters:</Label>
 			<View height="Ti.UI.SIZE" layout="horizontal" left="16" right="16">
-				<Picker id="chaptersPicker">
+				<Picker id="chaptersPicker" onChange="chapterSelect">
 					
 				</Picker>
 				<Button id="read" title="Read!" onClick="readChapter" />

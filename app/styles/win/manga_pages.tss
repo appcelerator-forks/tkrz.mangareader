@@ -1,0 +1,14 @@
+"#pages": {
+	overScrollMode: Titanium.UI.Android.OVER_SCROLL_NEVER
+}
+"#currentPage": {
+	left: 5,
+	right: 5
+}
+".overlay": {
+	right: 0,
+	bottom: 0,
+	width: Titanium.UI.SIZE,
+	height: Ti.UI.SIZE,
+	backgroundColor: "#80ffffff"
+}

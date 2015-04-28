@@ -1,16 +1,18 @@
 {
-	"global": {
-	   "links": {
-           "base": "http://www.mangareader.net",
-	       "list": "http://www.mangareader.net/alphabetical"
-	   }
-	}, 
-	"env:development": {}, 
-	"env:test": {}, 
-	"env:production": {}, 
-	"os:android": {},
-	"os:blackberry": {},
-	"os:ios": {},
-	"os:mobileweb": {},
-	"dependencies": {}
+    "global": {
+        "links": {
+            "base": "http://www.mangareader.net",
+            "list": "http://www.mangareader.net/alphabetical"
+        }
+    },
+    "env:development": {},
+    "env:test": {},
+    "env:production": {},
+    "os:android": {},
+    "os:blackberry": {},
+    "os:ios": {},
+    "os:mobileweb": {},
+    "dependencies": {
+        "pl.tidev.mangareader.mangapage": "1.0"
+    }
 }
