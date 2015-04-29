@@ -13,6 +13,7 @@
     "os:ios": {},
     "os:mobileweb": {},
     "dependencies": {
-        "pl.tidev.mangareader.mangapage": "1.0"
+        "pl.tidev.mangareader.mangapage": "1.0",
+        "pl.tidev.mangareader.aboutdialog": "1.0"
     }
 }

@@ -21,6 +21,11 @@ function init () {
             });
             menuPrevious.addEventListener("click", previousChapter);
         }
+        menuChapters = e.menu.add({
+            title: 'Chptr ' + (chapterIndex + 1) + ' of ' + chapters.length,
+            showAsAction : Ti.Android.SHOW_AS_ACTION_ALWAYS
+        });
+        menuChapters.addEventListener("click", showChapters);
         if(chapterIndex < chapters.length - 1) {
             var menuPrevious = e.menu.add({
                 title : "Next",
@@ -63,6 +68,28 @@ function nextChapter() {
     $.loader.show();
     chapterIndex += 1;
     init();
+}
+
+function showChapters() {
+    var options = [];
+    _.forEach(chapters, function(chapter){
+        options.push(chapter.title);
+    });
+    var dialog = Ti.UI.createOptionDialog({
+        title: "Go to chapter",
+        options: options,
+        selectedIndex: chapterIndex,
+        buttonNames: ["OK"]
+    });
+    dialog.addEventListener('click', function (e) {
+        if(!e.button && e.index !== undefined) {
+            $.container.removeAllChildren();
+            $.loader.show();
+            chapterIndex = e.index;
+            init();
+        }
+    });
+    dialog.show();
 }
 
 function closeWindow() {

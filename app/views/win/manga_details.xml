@@ -1,10 +1,6 @@
 <Alloy>
 	<Window onOpen="init">
-		
-		<Menu>
-			<MenuItem id="addToFav" onClick="addToFav" title="add to favorites" titleCondensed="favorite" ></MenuItem>
-		</Menu>
-		
+				
 		<ScrollView id="content">
 				
             <View id="header" layout="horizontal" horizontalWrap="false" >

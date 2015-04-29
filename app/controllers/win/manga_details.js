@@ -10,18 +10,27 @@ $.manga_details.title = mangaTitle;
 
 function init(){
 	$.activityIndicator.show();
-	// if(isFav()) {
-	    // $.addToFav.icon = Ti.Android.R.drawable.ic_action_bad;
-	// }
-	// else
-        // $.addToFav.icon = Ti.Android.R.drawable.ic_action_bad;
 	http.getPage(loadData, titleUrl);
-	var actionBar = $.manga_details.activity.getActionBar();
-	actionBar.title = mangaTitle;
-	actionBar.setDisplayHomeAsUp(true);
-	actionBar.setHomeButtonEnabled(true);
-	actionBar.onHomeIconItemSelected = closeWindow;
-	$.manga_details.activity.invalidateOptionsMenu();
+	var activity = $.manga_details.activity;
+	activity.actionBar.title = mangaTitle;
+	activity.actionBar.setDisplayHomeAsUp(true);
+	activity.actionBar.setHomeButtonEnabled(true);
+	activity.actionBar.onHomeIconItemSelected = closeWindow;
+	activity.onCreateOptionsMenu = function(e) {
+        if(isFav()){
+            var menuFavAdd = e.menu.add({
+                title : "Remove favorite"
+            });
+            menuFavAdd.addEventListener("click", toggleFav);
+        }
+        else {
+            var menuFavRemove = e.menu.add({
+                title : "Add favorite"
+            });
+            menuFavRemove.addEventListener("click", toggleFav);
+        }
+    };
+	activity.invalidateOptionsMenu();
 }
 
 function loadData(data){
@@ -47,20 +56,30 @@ function loadData(data){
 	$.content.show();
 };
 
-function addToFav() {
+function toggleFav() {
+    var favs = Ti.App.Properties.getObject('favs', []);
     if(!isFav()) {
-        var favs = Ti.App.Properties.getObject('favs', []);
         favs.push({properties: {url: titleUrl, title: mangaTitle, searchableText: mangaTitle}});
         Ti.App.Properties.setObject('favs', favs);
+        $.manga_details.activity.invalidateOptionsMenu();
         Alloy.Globals.favoritesAddObj.trigger('update');
         Ti.UI.createNotification({
             message: 'Added to favorites'
         }).show();
     }
-    else
+    else {
+        var removeId = [];
+        _.forEach(favs, function(fav, index){
+            if(fav.properties.title === mangaTitle)
+                favs.splice(index, 1);
+        });
+        Ti.App.Properties.setObject('favs', favs);
+        $.manga_details.activity.invalidateOptionsMenu();
+        Alloy.Globals.favoritesAddObj.trigger('update');
         Ti.UI.createNotification({
-            message: 'Already in favorites'
+            message: 'Removed from favorites'
         }).show();
+    }
 }
 
 function chapterSelect (e) {

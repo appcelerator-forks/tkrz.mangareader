@@ -11,3 +11,7 @@ function getImage (data) {
 function hideLoader() {
     $.loader.hide();
 }
+
+function handleError() {
+    Ti.API.error('Manga page failed to load');
+}

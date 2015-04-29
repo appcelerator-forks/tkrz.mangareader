@@ -14,7 +14,16 @@ function init(){
             actionView: search,
             showAsAction : Ti.Android.SHOW_AS_ACTION_ALWAYS | Ti.Android.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW
         });
+        var about = e.menu.add({
+           title: "About" 
+        });
+        about.addEventListener('click', showAbout);
     };
+}
+
+function showAbout() {
+    Alloy.createWidget('pl.tidev.mangareader.aboutdialog').getView().show();
+   
 }
 
 $.index.open();

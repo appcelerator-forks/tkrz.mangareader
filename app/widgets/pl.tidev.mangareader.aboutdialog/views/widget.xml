@@ -1,0 +1,12 @@
+<Alloy>
+	<AlertDialog title="About">
+		<ScrollView>
+			<Label id="credits">
+				Mangareader application is made to bring mangareader.net manga library to your mobile device. The manga presented in application is entirely hosted by mangareader.net, and author of this app is not a holder of any of presented mangas. This app simply provides better user experience for mangareader.net media (that's what author is aiming for).\n\tI know, that not many people will actually reads this, however, for those ho will the only thing left for me to say is: "Have nice reading! :)"\n\nApplication uses:\nJsoup version 1.7.3
+			</Label>
+		</ScrollView>
+		<ButtonNames>
+			<ButtonName>OK</ButtonName>
+		</ButtonNames>
+	</AlertDialog>
+</Alloy>

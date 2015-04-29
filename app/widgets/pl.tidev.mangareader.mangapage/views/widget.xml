@@ -1,6 +1,6 @@
 <Alloy>
 	<ScrollView class="holder">
-		<ImageView id="page" onLoad="hideLoader" />
+		<ImageView id="page" onLoad="hideLoader" onError="handleError" />
 		<ActivityIndicator id="loader" />
 	</ScrollView>
 </Alloy>

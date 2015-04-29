@@ -3,7 +3,8 @@
 }
 "#currentPage": {
 	left: 5,
-	right: 5
+	right: 5,
+	color: 'black'
 }
 ".overlay": {
 	right: 0,
