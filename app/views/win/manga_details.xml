@@ -1,34 +1,28 @@
 <Alloy>
 	<Window onOpen="init">
-		<View id="content">
-			<View id="header">
-				<ImageView id="mangaImg" />
+				
+		<ScrollView id="content">
+				
+            <View id="header" layout="horizontal" horizontalWrap="false" >
+                <ImageView id="mangaImg" />
+                <View layout="vertical" height="Ti.UI.SIZE" width="Ti.UI.SIZE">
+                    <Label id="author" class="authorSection" />
+                    <Label id="year" class="authorSection" />
+                    <Label id="chapterCount" class="authorSection" />
+                    <Label id="status" class="authorSection" />
+                </View>
+            </View>
+            <Label class="header">Chapters:</Label>
+			<View height="Ti.UI.SIZE" layout="horizontal" left="16" right="16">
+				<Picker id="chaptersPicker" onChange="chapterSelect">
+					
+				</Picker>
+				<Button id="read" title="Read!" onClick="readChapter" />
 			</View>
-			<ListView id="descView">
-				
-				<Templates>
-
-	                <!-- Define your item templates within the Templates tags or use the
-	                     Require tag to include a view that only contains an ItemTemplate -->
-	
-	                <ItemTemplate name="description">
-	                    <Label bindId="info" class="text" />
-	                </ItemTemplate>
-	
-	            </Templates>
-				
-				<ListSection id="description">
-					<HeaderView>
-						<Label class="header">Description:</Label>
-					</HeaderView>
-				</ListSection>
-				<ListSection id="chapters">
-					<HeaderView>
-						<Label class="header">Chapters:</Label>
-					</HeaderView>
-				</ListSection>
-			</ListView>
-		</View>
+			<Label class="header">Description:</Label>
+			<Label id="description" class="description" />
+			
+		</ScrollView>
 		<ActivityIndicator id="activityIndicator" />
 	</Window>
 </Alloy>

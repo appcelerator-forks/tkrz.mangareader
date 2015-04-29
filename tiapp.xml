@@ -4,9 +4,9 @@
     <property name="acs-api-key-development" type="string">Wg29RuCOoX3vo5KRoXnmPjP0pOu5hzwG</property>
     <id>pl.tkrz.mangareader</id>
     <name>mangareader</name>
-    <version>1.0</version>
+    <version>1.0.0</version>
     <publisher>Tomasz Krzywda</publisher>
-    <url>http://</url>
+    <url>http://github.com/tkrz</url>
     <description>Application to view manga from mangareader.net directly on your mobile device.</description>
     <copyright>2014 by Tomasz Krzywda</copyright>
     <icon>appicon.png</icon>
@@ -15,6 +15,7 @@
     <analytics>true</analytics>
     <guid>eabaa7d9-b4a8-4d4a-953f-77289af88e92</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
+    <property name="ti.android.bug2373.finishfalseroot" type="bool">true</property>
     <ios>
         <plist>
             <dict>
@@ -40,7 +41,13 @@
             </dict>
         </plist>
     </ios>
-    <android xmlns:android="http://schemas.android.com/apk/res/android"/>
+    <android xmlns:android="http://schemas.android.com/apk/res/android">
+        <tool-api-level>14</tool-api-level>
+        <manifest android:versionCode="1" android:versionName="1.0.0">
+            <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="22"/>
+            <!-- other manifest entries -->
+        </manifest>
+    </android>
     <mobileweb>
         <precache/>
         <splash>
@@ -62,6 +69,6 @@
     </deployment-targets>
     <sdk-version>3.5.1.GA</sdk-version>
     <plugins>
-        <plugin version="1.4.1">ti.alloy</plugin>
+        <plugin version="1.5.1">ti.alloy</plugin>
     </plugins>
 </ti:app>

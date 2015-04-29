@@ -1,12 +1,5 @@
 <Alloy>
-	<TabGroup>
-		<Tab title="Manga List">
-			<Require type="view" id="manga_list" src="win/manga_list"></Require>
-		</Tab>
-		<Tab title="Favs">
-			<Window title="Favs">
-				<Label>I am Window 2</Label>
-			</Window>
-		</Tab>
+	<TabGroup id="index" onOpen="init">
+		
 	</TabGroup>
 </Alloy>

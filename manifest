@@ -1,8 +1,8 @@
-#appname: mangareader
-#publisher: agito
-#url: http://
-#image: appicon.png
-#appid: pl.tkrz.mangareader
-#desc: undefined
-#type: ipad
-#guid: eabaa7d9-b4a8-4d4a-953f-77289af88e92
+#appname:mangareader
+#publisher:Tomasz Krzywda
+#url:http://github.com/tkrz
+#image:appicon.png
+#appid:pl.tkrz.mangareader
+#desc:Application to view manga from mangareader.net directly on your mobile device.
+#type:ipad
+#guid:eabaa7d9-b4a8-4d4a-953f-77289af88e92

@@ -1,21 +1,33 @@
 
 "#content": {
-	layout: 'vertical'  
+	layout: 'vertical',
+	visible: false 
 }
 "#header":{
-	height: '100dp',
+	height: 152,
 	backgroundColor: 'white'
 }
-"#mangaImg": {
+"#mangaImg":{
 	left: 0,
-	height: Ti.UI.FILL,
+	height: 150,
 	width: 'auto'
 }
-"#descView":{
+".authorSection":{
+    left: 10,
+    right: 16,
+    color: 'black'
 }
 "#description":{
 }
-"#chapters":{
-	height: '250dp',
-	width: '95%'
+".header": {
+	left: 32,
+	font: {
+		fontSize: 20
+	}
+}
+".description": {
+	top: 5,
+	left: 16,
+	right: 16,
+	bottom: 16
 }

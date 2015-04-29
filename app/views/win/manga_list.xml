@@ -1,7 +1,7 @@
 <Alloy>
 	<Window class="container" title="Manga List" onOpen="init">
 	    
-	    <ListView id="mangaList" onItemclick="openTitle">
+	    <ListView id="mangaList" onItemclick="openTitle" searchAsChild="false" onNoresults="noresults">
 	    </ListView>
 	    
 	    <ActivityIndicator id="activityIndicator"/>

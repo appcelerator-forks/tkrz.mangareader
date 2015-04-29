@@ -1,17 +1,17 @@
-"#activityIndicator":{
+"ActivityIndicator":{
     style: Ti.UI.ActivityIndicatorStyle.BIG
 }
 ".header":{
-	left: '16dp',
-	top: '16dp',
+	left: 16,
+	top: 16,
 	font:{
 		fontWeight: 'bold',
-		fontSize: '16dp'
+		fontSize: 16
 	}
 }
 ".text":{
-	left: '16dp',
-	right: '16dp',
-	top: '16dp',
+	left: 16,
+	right: 16,
+	top: 16,
 	color: 'white'
 }
