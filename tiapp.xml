@@ -1,74 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ti:app xmlns:ti="http://ti.appcelerator.org">
-    <property name="acs-api-key-production" type="string">vxtMZuEEV4qeg57W0QXn0lEqwXzdIFsp</property>
-    <property name="acs-api-key-development" type="string">Wg29RuCOoX3vo5KRoXnmPjP0pOu5hzwG</property>
-    <id>pl.tkrz.mangareader</id>
-    <name>mangareader</name>
-    <version>1.0.0</version>
-    <publisher>Tomasz Krzywda</publisher>
-    <url>http://github.com/tkrz</url>
-    <description>Application to view manga from mangareader.net directly on your mobile device.</description>
-    <copyright>2014 by Tomasz Krzywda</copyright>
-    <icon>appicon.png</icon>
-    <fullscreen>false</fullscreen>
-    <navbar-hidden>false</navbar-hidden>
-    <analytics>true</analytics>
-    <guid>eabaa7d9-b4a8-4d4a-953f-77289af88e92</guid>
-    <property name="ti.ui.defaultunit" type="string">dp</property>
-    <property name="ti.android.bug2373.finishfalseroot" type="bool">true</property>
-    <ios>
-        <plist>
-            <dict>
-                <key>UISupportedInterfaceOrientations~iphone</key>
-                <array>
-                    <string>UIInterfaceOrientationPortrait</string>
-                </array>
-                <key>UISupportedInterfaceOrientations~ipad</key>
-                <array>
-                    <string>UIInterfaceOrientationPortrait</string>
-                    <string>UIInterfaceOrientationPortraitUpsideDown</string>
-                    <string>UIInterfaceOrientationLandscapeLeft</string>
-                    <string>UIInterfaceOrientationLandscapeRight</string>
-                </array>
-                <key>UIRequiresPersistentWiFi</key>
-                <false/>
-                <key>UIPrerenderedIcon</key>
-                <false/>
-                <key>UIStatusBarHidden</key>
-                <false/>
-                <key>UIStatusBarStyle</key>
-                <string>UIStatusBarStyleDefault</string>
-            </dict>
-        </plist>
-    </ios>
-    <android xmlns:android="http://schemas.android.com/apk/res/android">
-        <tool-api-level>14</tool-api-level>
-        <manifest android:versionCode="1" android:versionName="1.0.0">
-            <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="22"/>
-            <!-- other manifest entries -->
-        </manifest>
-    </android>
-    <mobileweb>
-        <precache/>
-        <splash>
-            <enabled>true</enabled>
-            <inline-css-images>true</inline-css-images>
-        </splash>
-        <theme>default</theme>
-    </mobileweb>
-    <modules>
-        <module platform="commonjs">ti.cloud</module>
-        <module platform="android">pl.tkrz.mangareader.parser</module>
-    </modules>
-    <deployment-targets>
-        <target device="android">true</target>
-        <target device="blackberry">false</target>
-        <target device="ipad">true</target>
-        <target device="iphone">true</target>
-        <target device="mobileweb">true</target>
-    </deployment-targets>
-    <sdk-version>3.5.1.GA</sdk-version>
-    <plugins>
-        <plugin version="1.5.1">ti.alloy</plugin>
-    </plugins>
+<ti:app 
+  xmlns:ti="http://ti.appcelerator.org">
+  <property name="acs-api-key-production" type="string">vxtMZuEEV4qeg57W0QXn0lEqwXzdIFsp</property>
+  <property name="acs-api-key-development" type="string">Wg29RuCOoX3vo5KRoXnmPjP0pOu5hzwG</property>
+  <id>pl.tkrz.mangareader</id>
+  <name>mangareader</name>
+  <version>1.0.0</version>
+  <publisher>Tomasz Krzywda</publisher>
+  <url>http://github.com/tkrz</url>
+  <description>Application to view manga from mangareader.net directly on your mobile device.</description>
+  <copyright>2014 by Tomasz Krzywda</copyright>
+  <icon>appicon.png</icon>
+  <fullscreen>false</fullscreen>
+  <navbar-hidden>false</navbar-hidden>
+  <analytics>true</analytics>
+  <guid>2a09e1a0-dc63-412b-9bbb-a0f960086924</guid>
+  <property name="ti.ui.defaultunit" type="string">dp</property>
+  <property name="ti.android.bug2373.finishfalseroot" type="bool">true</property>
+  <ios>
+    <plist>
+      <dict>
+        <key>UISupportedInterfaceOrientations~iphone</key>
+        <array>
+          <string>UIInterfaceOrientationPortrait</string>
+        </array>
+        <key>UISupportedInterfaceOrientations~ipad</key>
+        <array>
+          <string>UIInterfaceOrientationPortrait</string>
+          <string>UIInterfaceOrientationPortraitUpsideDown</string>
+          <string>UIInterfaceOrientationLandscapeLeft</string>
+          <string>UIInterfaceOrientationLandscapeRight</string>
+        </array>
+        <key>UIRequiresPersistentWiFi</key>
+        <false/>
+        <key>UIPrerenderedIcon</key>
+        <false/>
+        <key>UIStatusBarHidden</key>
+        <false/>
+        <key>UIStatusBarStyle</key>
+        <string>UIStatusBarStyleDefault</string>
+      </dict>
+    </plist>
+  </ios>
+  <android 
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <manifest android:versionCode="1" android:versionName="1.0.0">
+      <!-- other manifest entries -->
+    </manifest>
+  </android>
+  <mobileweb>
+    <precache/>
+    <splash>
+      <enabled>true</enabled>
+      <inline-css-images>true</inline-css-images>
+    </splash>
+    <theme>default</theme>
+  </mobileweb>
+  <modules>
+    <module platform="commonjs">ti.cloud</module>
+    <module platform="android">pl.tkrz.mangareader.parser</module>
+  </modules>
+  <deployment-targets>
+    <target device="android">true</target>
+    <target device="ipad">true</target>
+    <target device="iphone">true</target>
+    <target device="mobileweb">true</target>
+  </deployment-targets>
+  <sdk-version>5.1.2.GA</sdk-version>
+  <plugins>
+    <plugin version="1.7.18">ti.alloy</plugin>
+  </plugins>
+  <property name="appc-app-id" type="string">56a1f5054e5d8e6857f6a92c</property>
 </ti:app>

@@ -1,7 +1,10 @@
 var chapters = arguments[0].chapters,
 chapterIndex = arguments[0].chapterIndex,
+mangaTitle = arguments[0].title,
 pagesData,
-parserModule = require('pl.tkrz.mangareader.parser');
+parserModule = require('pl.tkrz.mangareader.parser'),
+history = require("history"),
+title = history.getTitle(mangaTitle);
 
 $.loader.show();
 
@@ -52,14 +55,20 @@ function loadPages (data) {
 }
 
 function pageChange (e) {
-    if(e.currentPage !== undefined)
+    if(e.currentPage !== undefined){
         $.currentPage.text = (e.currentPage + 1) + "/" + pagesData.length;
+        title.latestChapter.page = e.currentPage + 1;
+    	setTitleHistory();
+   }
 }
 
 function previousChapter() {
     $.container.removeAllChildren();
     $.loader.show();
     chapterIndex -= 1;
+    title.latestChapter.url = chapters[chapterIndex];
+    title.latestChapter.index = chapterIndex;
+    setTitleHistory();
     init();
 }
 
@@ -94,6 +103,10 @@ function showChapters() {
 
 function closeWindow() {
     $.manga_pages.close();
+}
+
+function setTitleHistory(){
+    history.setTitle(mangaTitle, title);
 }
 
 $.manga_pages.open();

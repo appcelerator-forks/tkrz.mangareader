@@ -4,7 +4,18 @@ mangaTitle = args.title,
 http = require('http'),
 parserModule = require('pl.tkrz.mangareader.parser'),
 chapters = [],
-chapterIndex = 0;
+chapterIndex = 0,
+history = require("history");
+var title = history.getTitle(mangaTitle);
+history.on("change", function (historyData) {
+	title = historyData[mangaTitle];
+	chapterIndex = title.latestChapter.index;
+   	$.chaptersPicker.setSelectedRow(0, title.latestChapter.index, false);
+});
+if(title.url == ""){
+	title.url = titleUrl;
+	history.setTitle(mangaTitle, title);
+}
 
 $.manga_details.title = mangaTitle;
 
@@ -34,6 +45,7 @@ function init(){
 }
 
 function loadData(data){
+	// var title = history.getTitle(mangaTitle);
 	var details = JSON.parse(parserModule.parseMangaDetails(data));
 	Ti.API.info(JSON.stringify(details.chapters));
 	chapters = details.chapters;
@@ -48,8 +60,9 @@ function loadData(data){
 	}
 	$.chaptersPicker.add(pickerData);
 	if(pickerData.length > 1){
-	   $.chaptersPicker.setSelectedRow(0, 1, false);
-       $.chaptersPicker.setSelectedRow(0, 0, false);
+	   // $.chaptersPicker.setSelectedRow(0, 0, false);
+	   chapterIndex = title.latestChapter.index;
+       $.chaptersPicker.setSelectedRow(0, title.latestChapter.index, false);
     }
 	$.description.text = details.summary;
 	$.activityIndicator.hide();
@@ -85,10 +98,12 @@ function toggleFav() {
 function chapterSelect (e) {
     Ti.API.info(e.rowIndex);
     chapterIndex = e.rowIndex;
+    title.latestChapter.index = chapterIndex;
+    history.setTitle(mangaTitle, title);
 }
 
 function readChapter() {
-    Alloy.createController('win/manga_pages', {chapterIndex: chapterIndex, chapters: chapters});
+    Alloy.createController('win/manga_pages', {title: mangaTitle, chapterIndex: chapterIndex, chapters: chapters});
 }
 
 function isFav () {

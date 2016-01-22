@@ -6,24 +6,42 @@ string = require('alloy/string');
 $.mangaList.search = Alloy.Globals.searchView;
 
 function init(){
-    if(args.type === 'list'){
-        var list = Ti.App.Properties.getObject('list', null),
-        lastUpdate = Ti.App.Properties.getInt('lastUpdate', 0);
-        if(list === null && Ti.Network.online)
-            refreshList();
-        // else if((new Date().getTime() - lastUpdate) > 7*24*60*60*1000 &&  Ti.Network.online)
-            // refreshList();
-        else displayList(list);
+    switch(args.type){
+    	case 'favs':
+	        var favs = Ti.App.Properties.getObject('favs', []);
+	        Alloy.Globals.favoritesAddObj.on('update', function(){
+	            var favs = Ti.App.Properties.getObject('favs', []);
+	            $.mangaList.deleteSectionAt(0);
+	            displayList(favs);
+	        });
+	        displayList(favs);
+	        break;
+        case "hist":
+			var history = require("history");
+		 	history.on("change", function (historyData) {
+	            $.mangaList.deleteSectionAt(0);
+		 		loadHistory(historyData);
+		 	});
+		 	loadHistory(history.historyContainer);
+        	break;
+    	case 'list':
+	    default:
+	        var list = Ti.App.Properties.getObject('list', null),
+	        lastUpdate = Ti.App.Properties.getInt('lastUpdate', 0);
+	        if(list === null && Ti.Network.online)
+            	refreshList();
+	        else displayList(list);
+	    	break;
     }
-    else if(args.type === 'favs') {
-        var favs = Ti.App.Properties.getObject('favs', []);
-        Alloy.Globals.favoritesAddObj.on('update', function(){
-            var favs = Ti.App.Properties.getObject('favs', []);
-            $.mangaList.deleteSectionAt(0);
-            displayList(favs);
-        });
-        displayList(favs);
-    }
+}
+
+function loadHistory(history){
+ 	var items = [];
+ 	_.each(history, function (titleData, title) {
+ 		// Ti.API.info(JSON.stringify(titleData));
+ 		items.push({properties: {url: titleData.url, title: title, subtitle: "Last chapter: " + (titleData.latestChapter.index + 1), searchableText: title}});
+ 	});
+ 	displayList(items);
 }
 
 function refreshList(){
@@ -58,10 +76,7 @@ function noresults() {
 }
 
 function openTitle(e){
-    if(args.type === 'list')
-        var list = Ti.App.Properties.getObject('list');
-    else if(args.type === 'favs')
-        var list = Ti.App.Properties.getObject('favs');
+	var list = e.section.items;
 	// alert("Manga title: " + list[e.itemIndex].properties.title + " Manga url: " + Alloy.CFG.links.base + list[e.itemIndex].properties.url);
 	Alloy.createController('win/manga_details', {url: list[e.itemIndex].properties.url, title: list[e.itemIndex].properties.title}).getView().open();
 };
