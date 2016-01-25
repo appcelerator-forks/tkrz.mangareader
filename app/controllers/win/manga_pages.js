@@ -76,6 +76,9 @@ function nextChapter() {
     $.container.removeAllChildren();
     $.loader.show();
     chapterIndex += 1;
+    title.latestChapter.url = chapters[chapterIndex];
+    title.latestChapter.index = chapterIndex;
+    setTitleHistory();
     init();
 }
 
